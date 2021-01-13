@@ -21,4 +21,13 @@
 
 .subjectDescription{
     color: white;
+    font-family: monospace;
+}
+
+.subjectTestInfo{
+    color: #242424;
+    background-color:#242424 ;
+    border-bottom-color: white;
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
 }

@@ -1,5 +1,6 @@
 {
     "grey": "#4d4d4d",
     "orange": "#ed8b13",
-    "darkGrey": "#303030"
+    "darkGrey": "#303030",
+    "darkestGrey": "242424"
 }
