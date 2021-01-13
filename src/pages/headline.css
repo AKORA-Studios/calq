@@ -12,3 +12,13 @@
     font-size: 30px;
     font-family:  Helvetica ;
 }
+
+.subjectDiv{
+    color: #303030;
+    background-color:#303030 ;
+    height: 25rem;
+}
+
+.subjectDescription{
+    color: white;
+}
