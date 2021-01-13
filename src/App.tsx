@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import { MainPage, LineChartThing } from './pages'
 import { Navbar } from './Components'
-import { grey } from './colors.json'
 
 function App() {
     return (

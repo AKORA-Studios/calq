@@ -1,5 +1,7 @@
 .headline{
     color: #ed8b13;
+    margin-top: 0%;
+    padding-top: 1%;
 }
 
 .headDiv{
@@ -22,12 +24,43 @@
 .subjectDescription{
     color: white;
     font-family: monospace;
+    height: 3.5rem;
 }
 
 .subjectTestInfo{
     color: #242424;
     background-color:#242424 ;
-    border-bottom-color: white;
-    border-bottom-style: dotted;
-    border-bottom-width: 2px;
+    border-color: white;
+ border-style: dotted;
+   border-width: 2px;
+   border-bottom-color: transparent;
+    height: 3.5rem;
+    margin-left: 5%;
+}
+
+.AssigmnetType{
+    color: white;
+    border-right-color: white;
+    border-right-style: dotted;
+    border-right-width: 2px;
+    height: 3.5rem;
+}
+
+.AssignmentTypeIcon{
+    font-family: monospace;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 5%;  
+}
+
+.assignmentPointsDiv{
+    color: #242424;
+    height: 3.5rem;
+}
+
+.AssigmentPoints{
+    font-family: monospace;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 5%;
 }
