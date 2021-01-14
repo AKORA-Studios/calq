@@ -1,7 +1,9 @@
-[{
+[
+    {
         "name": "Subject A",
         "id": "Qwq",
-        "entr": [{
+        "entr": [
+            {
                 "name": "Test UTF8",
                 "date": "2020-07-05",
                 "points": 12,
@@ -21,7 +23,7 @@
             },
             {
                 "name": "Test Lorem Ipsum",
-                "date": "2020-010-05",
+                "date": "2020-10-05",
                 "points": 14,
                 "type": "Smal"
             }
@@ -31,7 +33,8 @@
     {
         "name": "Subject B",
         "id": "qwq",
-        "entr": [{
+        "entr": [
+            {
                 "name": "Test UTF8",
                 "date": "2020-03-05",
                 "points": 12,
@@ -51,5 +54,24 @@
             }
         ],
         "color": "#f52525"
+    },
+    {
+        "name": "Subject C",
+        "id": "3",
+        "entr": [
+            {
+                "name": "Test UTF8",
+                "date": "2020-03-05",
+                "points": 4,
+                "type": "Big"
+            },
+            {
+                "name": "Test Lorem Ipsum",
+                "date": "2020-05-05",
+                "points": 9,
+                "type": "Smal"
+            }
+        ],
+        "color": "#34d93a"
     }
 ]
