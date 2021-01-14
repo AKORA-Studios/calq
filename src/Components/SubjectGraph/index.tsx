@@ -1,6 +1,5 @@
 import { Component, } from "react";
 import '../headline.css'
-import { AreaChartGradient } from '../index'
 
 import { LineChart, XAxis, Tooltip, CartesianGrid, Line, YAxis, AreaChart, Area, ReferenceLine } from 'recharts'
 const TestDate = require('./test.json') as {
@@ -12,6 +11,7 @@ const TestDate = require('./test.json') as {
         type: string;
     }[];
     color: string;
+    id: number;
 }[];
 
 
@@ -27,7 +27,12 @@ export class AreaChartSubjects extends Component {
                             <h1 className="subjectName" style={{ textAlign: "left", marginLeft: "5%", color: e.color }}>{e.name}</h1>
                             <AreaChart width={700} height={300} data={e.entr}>
 
-                                <AreaChartGradient id="colorUv" color={e.color}></AreaChartGradient>
+                                <defs>
+                                    <linearGradient id={`gradientFor${e.id}`} x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="5%" stopColor={e.color} stopOpacity={1} />
+                                        <stop offset="95%" stopColor={e.color} stopOpacity={0.05} />
+                                    </linearGradient>
+                                </defs>
 
                                 <CartesianGrid
                                     stroke="#ffffff"
@@ -38,7 +43,7 @@ export class AreaChartSubjects extends Component {
                                 <Area type="monotone" dataKey="points"
                                     stroke={e.color}
                                     fillOpacity={1}
-                                    fill="url(#colorUv)"
+                                    fill={`url(#gradientFor${e.id})`}
                                     animationEasing="ease-in-out"
                                     name="Points"
                                     dot={{ stroke: "#ffffff", opacity: 0.2 }}

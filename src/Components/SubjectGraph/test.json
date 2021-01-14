@@ -27,7 +27,8 @@
                 "type": "Smal"
             }
         ],
-        "color": "#5476f0"
+        "color": "#5476f0",
+        "id": 1
     },
     {
         "name": "Subject B",
@@ -51,7 +52,8 @@
                 "type": "Smal"
             }
         ],
-        "color": "#f52525"
+        "color": "#f52525",
+        "id": 2
     },
     {
         "name": "Subject C",
@@ -69,6 +71,7 @@
                 "type": "Smal"
             }
         ],
-        "color": "#71ff64"
+        "color": "#71ff64",
+        "id": 3
     }
 ]
