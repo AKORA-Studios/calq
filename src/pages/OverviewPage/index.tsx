@@ -10,7 +10,7 @@ export class OverviewPage extends Component {
         console.log(data);
         return (
             <div>
-                <Navbar />
+                <Navbar type={'overview'} />
                 <div className="headline">
                     {(data.map(sub =>
                         <SubjectView
