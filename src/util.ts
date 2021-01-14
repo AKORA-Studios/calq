@@ -1,3 +1,10 @@
+export interface RawTest {
+    name: string;
+    topic: string;
+    date: string;
+    type: 'Big' | 'Smal';
+    points: number;
+}
 export interface Test {
     name: string;
     topic: string;
@@ -13,7 +20,12 @@ export interface Test {
      */
 }
 
-
+export interface RawSubject {
+    name: string;
+    color: string;
+    id: string;
+    entr: RawTest[];
+}
 export interface Subject {
     name: string;
     color: string;
@@ -24,8 +36,21 @@ export interface Subject {
     entr: Test[];
 }
 
-export function parse(data: Subject) {
+export function parse(data: RawSubject[]) {
+    for (const sub of data) {
+        for (const entr of sub.entr) {
+            console.log(entr.date);
+            //@ts-ignore
+            entr.date = new Date(entr.date);
+        }
 
+        //@ts-ignore
+        sub.entr = (sub.entr as unknown as Test[]).sort((a, b) => a.date.getTime() - b.date.getTime())
+    }
+
+    console.log(JSON.stringify(data));
+
+    return data as unknown as Subject[];
 }
 
 

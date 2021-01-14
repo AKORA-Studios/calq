@@ -44,7 +44,7 @@ export class SubjectChart extends Component<Subject, States> {
                     <XAxis dataKey="points" tick={false} stroke="#ffffff" />
                     <YAxis domain={[0, 15]} minTickGap={0} tickCount={15} stroke="#ffffff" />
 
-                    <Tooltip />
+                    <Tooltip label="qwq" />
                 </AreaChart>
             </ResponsiveContainer>
         )
