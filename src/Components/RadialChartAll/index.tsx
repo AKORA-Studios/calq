@@ -26,16 +26,17 @@ const data = [
 ];
 
 
-
 export class RadialChartAll extends Component {
     render() {
         return (
-            <RadarChart cx={300} cy={250} outerRadius={150} width={500} height={500} data={data}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="name" tick={{ fill: '#ffffff' }} />
-                <PolarRadiusAxis domain={[0, 15]} />
-                <Radar name="name" dataKey="points" stroke="#8884d8" fill="#2c388f" fillOpacity={0.6} />
-            </RadarChart>
+            <div style={{ marginRight: '5%', marginLeft: "5%" }}>
+                <RadarChart cx={300} cy={250} outerRadius={150} width={500} height={500} data={data}>
+                    <PolarGrid />
+                    <PolarAngleAxis dataKey="name" tick={{ fill: '#ffffff' }} />
+                    {/*<PolarRadiusAxis domain={[0, 15]} />*/}
+                    <Radar name="name" dataKey="points" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                </RadarChart>
+            </div>
         );
     }
 }

@@ -1,5 +1,5 @@
 import { Component, } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell, ResponsiveContainer } from 'recharts'
 
 const data = [
     {
@@ -21,10 +21,24 @@ const data = [
         name: 'BIO', points: 15, color: '#34d942', id: 6,
     },
     {
-        name: 'SPA', points: 13, color: '#fab491', id: 7,
+        name: 'SPA', points: 11, color: '#fab491', id: 7,
     },
     {
-        name: 'GEO', points: 13, color: '#27b34a', id: 7,
+        name: 'GEO', points: 8, color: '#27b34a', id: 8,
+    },
+
+    {
+        name: 'INF', points: 12, color: '#97a9d1', id: 9,
+    },
+
+    {
+        name: 'ETH', points: 9, color: '#fce277', id: 10,
+    },
+    {
+        name: 'KU', points: 7, color: '#9434d9', id: 11,
+    },
+    {
+        name: 'MU', points: 13, color: '#d934b5', id: 12,
     },
 ];
 
@@ -33,11 +47,11 @@ const data = [
 export class SubejctBarChartAll extends Component {
     render() {
         return (
-            <div style={{ marginLeft: "5%", marginRight: "5%" }}>
+            <div style={{ marginLeft: "5%", marginRight: "5%", marginTop: "5%" }}>
 
                 <BarChart width={600} height={400} data={data}>
 
-                    <Bar dataKey="points" barSize={50} radius={4} > {data.map((entry, index) => (
+                    <Bar dataKey="points" barSize={40} radius={4} > {data.map((entry, index) => (
                         <Cell fill={entry.color} />
                     ))} </Bar>
                     <Tooltip />
@@ -45,9 +59,8 @@ export class SubejctBarChartAll extends Component {
                     < YAxis domain={[0, 15]} minTickGap={0} tickCount={15} />
 
                 </BarChart>
+
                 <br />
-
-
             </div>
         )
     }
