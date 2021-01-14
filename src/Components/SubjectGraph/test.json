@@ -52,5 +52,23 @@
             }
         ],
         "color": "#f52525"
+    },
+    {
+        "name": "Subject C",
+        "entr": [
+            {
+                "name": "Test UTF8",
+                "date": "01.03.20",
+                "points": 12,
+                "type": "Big"
+            },
+            {
+                "name": "Test VSC",
+                "date": "12.12.12",
+                "points": 3,
+                "type": "Smal"
+            }
+        ],
+        "color": "#71ff64"
     }
 ]

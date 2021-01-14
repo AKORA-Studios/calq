@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Navbar, LineChartThing } from '../../Components'
+import { Navbar, AreaChartSubjects } from '../../Components'
 
 export class OverviewPage extends Component {
     render() {
@@ -7,7 +7,7 @@ export class OverviewPage extends Component {
             <div>
                 <Navbar></Navbar>
                 <div className="headDiv">
-                    <LineChartThing></LineChartThing>
+                    <AreaChartSubjects></AreaChartSubjects>
                 </div>
             </div>
 

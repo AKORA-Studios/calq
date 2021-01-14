@@ -1,5 +1,6 @@
 import { Component, } from "react";
 import '../headline.css'
+import { AreaChartGradient } from '../index'
 
 import { LineChart, XAxis, Tooltip, CartesianGrid, Line, YAxis, AreaChart, Area, ReferenceLine } from 'recharts'
 const TestDate = require('./test.json') as {
@@ -14,7 +15,7 @@ const TestDate = require('./test.json') as {
 }[];
 
 
-export class LineChartThing extends Component {
+export class AreaChartSubjects extends Component {
     render() {
         return (
             <div style={{ marginLeft: "5%", marginRight: "5%" }}>
@@ -23,17 +24,10 @@ export class LineChartThing extends Component {
                 { (TestDate.map(e => {
                     return <div className="subjectDiv" style={{ display: 'grid', gridTemplateColumns: "50% 50%" }}>
                         <div>
-
                             <h1 className="subjectName" style={{ textAlign: "left", marginLeft: "5%", color: e.color }}>{e.name}</h1>
-
                             <AreaChart width={700} height={300} data={e.entr}>
 
-                                <defs>
-                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor={e.color} stopOpacity={1} />
-                                        <stop offset="95%" stopColor={e.color} stopOpacity={0.05} />
-                                    </linearGradient>
-                                </defs>
+                                <AreaChartGradient id="colorUv" color={e.color}></AreaChartGradient>
 
                                 <CartesianGrid
                                     stroke="#ffffff"
