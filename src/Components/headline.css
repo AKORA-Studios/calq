@@ -23,6 +23,11 @@
     height: 4.5rem;
     margin-top: 0;
 }
+.navbarButtonTitle{
+    color: #ed8b13;
+    height: 4.5rem;
+    margin-top: 0;
+}
 .navbarButtonText{
     margin-top: 10%;
     font-size: 30px;
