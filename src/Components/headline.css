@@ -12,6 +12,12 @@
     text-align: center;
     color: #ed8b13;
 }
+.navbar>*{
+    border-width: 2px;
+    border-color: black;
+    border-style: dotted;
+}
+
 .navbarButton{
     color: #ed8b13;
     height: 4.5rem;
