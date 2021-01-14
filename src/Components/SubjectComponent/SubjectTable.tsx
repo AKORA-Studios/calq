@@ -16,7 +16,9 @@ export class SubjectTable extends Component<Subject, States> {
                     {(d.name).length > 20 ? (d.name).substr(0, 17) + '...' : d.name}
                 </p>
 
-                <p className="subjectDescription testText mono" style={{ color: "white" }}>{d.date}</p>
+                <p className="subjectDescription testText mono" style={{ color: "white" }}>
+                    {d.date.toLocaleDateString('de-DE')}
+                </p>
 
                 <div className="assignmentPointsDiv" style={{ backgroundColor: this.props.color, height: '3vw' }}>
                     <p className="AssigmentPoints testText mono bold" >{d.points}</p>
