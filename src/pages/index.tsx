@@ -1,2 +1,2 @@
 export { MainPage } from './MainPage'
-export { LineChartThing } from './LineChart'
+export { OverviewPage } from './OverviewPage'

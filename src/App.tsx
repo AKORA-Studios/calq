@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
-import { MainPage, LineChartThing } from './pages'
+import { MainPage, OverviewPage } from './pages'
 import { Navbar } from './Components'
 
 function App() {
     return (
-        <div className="App">
-            <Navbar></Navbar>
-            <LineChartThing></LineChartThing>
+        <div >
+            <Router>
+                < Switch >
+                    < Route path="/" exact={true} component={MainPage} />
+                    < Route path="/overview" exact={true} component={OverviewPage} />
+                    < Route path="*" exact={true} component={MainPage} />
+                </Switch >
+            </Router>
         </div>
 
     );
