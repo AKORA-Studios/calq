@@ -1,12 +1,17 @@
 import { Component } from "react";
-import { Navbar } from '../../Components'
+import { Navbar, SubejctBarChartAll, RadialChartAll } from '../../Components'
 
 export class MainPage extends Component {
     render() {
         return (
             <div >
                 <Navbar></Navbar>
+                <div style={{ display: 'grid', gridTemplateColumns: "50% 50%", marginTop: '5%' }}>
+                    <SubejctBarChartAll></SubejctBarChartAll>
+                    <RadialChartAll></RadialChartAll>
+                </div>
                 <h1 >Qui sint officia aliquip pariatur.</h1>
+
 
             </div>
         )
