@@ -1,29 +1,27 @@
-[
-    {
+[{
         "name": "Subject A",
         "id": "Qwq",
-        "entr": [
-            {
+        "entr": [{
                 "name": "Test UTF8",
-                "date": "2020-07-05",
+                "date": "2020/07/05",
                 "points": 12,
                 "type": "Big"
             },
             {
                 "name": "Test VSC",
-                "date": "2020-05-05",
+                "date": "2020/05/05",
                 "points": 9,
                 "type": "Smal"
             },
             {
                 "name": "Test VSC II",
-                "date": "2020-09-05",
+                "date": "2020/09/05",
                 "points": 3,
                 "type": "Smal"
             },
             {
                 "name": "Test Lorem Ipsum",
-                "date": "2020-10-05",
+                "date": "2020/10/05",
                 "points": 14,
                 "type": "Smal"
             }
@@ -33,22 +31,21 @@
     {
         "name": "Subject B",
         "id": "qwq",
-        "entr": [
-            {
+        "entr": [{
                 "name": "Test UTF8",
-                "date": "2020-03-05",
+                "date": "2020/03/05",
                 "points": 12,
                 "type": "Big"
             },
             {
                 "name": "Test VSC",
-                "date": "2020-02-05",
+                "date": "2020/02/05",
                 "points": 3,
                 "type": "Smal"
             },
             {
                 "name": "Test Lorem Ipsum",
-                "date": "2020-05-05",
+                "date": "2020/05/05",
                 "points": 4,
                 "type": "Smal"
             }
@@ -58,16 +55,15 @@
     {
         "name": "Subject C",
         "id": "3",
-        "entr": [
-            {
+        "entr": [{
                 "name": "Test UTF8",
-                "date": "2020-03-05",
+                "date": "2020/03/05",
                 "points": 4,
                 "type": "Big"
             },
             {
                 "name": "Test Lorem Ipsum",
-                "date": "2020-05-05",
+                "date": "2020/05/05",
                 "points": 9,
                 "type": "Smal"
             }
