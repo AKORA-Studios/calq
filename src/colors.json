@@ -2,5 +2,23 @@
     "grey": "#4d4d4d",
     "orange": "#ed8b13",
     "darkGrey": "#303030",
-    "darkestGrey": "#242424"
+    "darkestGrey": "#242424",
+    "subjects": {
+        "MA": "#347ed9",
+        "INF": "#347ed9",
+        "DE": "#347ed9",
+        "ENG": "#347ed9",
+        "FRE": "#347ed9",
+        "PHY": "#347ed9",
+        "BIO": "#347ed9",
+        "CHE": "#347ed9",
+        "GEO": "#347ed9",
+        "REL": "#347ed9",
+        "ETH": "#347ed9",
+        "SPO": "#347ed9",
+        "BO": "#347ed9",
+        "GE": "#347ed9",
+        "KU": "#347ed9",
+        "MU": "#347ed9"
+    }
 }
