@@ -1,5 +1,5 @@
 import { Component } from "react";
-import '../headline.css'
+import '../components.css'
 
 const home = () => window.location.href = 'http://localhost:3000/';
 const nothing = () => { }

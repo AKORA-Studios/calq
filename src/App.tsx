@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
 import { MainPage, OverviewPage } from './pages'
-import { Navbar } from './Components'
 
 function App() {
     return (
