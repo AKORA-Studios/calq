@@ -10,9 +10,6 @@ export class MainPage extends Component {
                     <SubejctBarChartAll></SubejctBarChartAll>
                     <RadialChartAll></RadialChartAll>
                 </div>
-                <h1 >Qui sint officia aliquip pariatur.</h1>
-
-
             </div>
         )
     }

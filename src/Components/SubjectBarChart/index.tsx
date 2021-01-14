@@ -3,25 +3,28 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell } from 'recharts'
 
 const data = [
     {
-        name: 'MA', points: 12, color: '#f52525', id: 1,
+        name: 'MA', points: 12, color: '#3439d9', id: 1,
     },
     {
-        name: 'ENG', points: 12, color: '#fcba03', id: 2,
+        name: 'ENG', points: 12, color: '#a11f1f', id: 2,
     },
     {
-        name: 'DE', points: 10, color: '#e195f0', id: 3,
+        name: 'DE', points: 10, color: '#e32b2b', id: 3,
     },
     {
         name: 'CHE', points: 5, color: '#070e40', id: 4,
     },
     {
-        name: 'FRZ', points: 2, color: '#55cf9c', id: 5,
+        name: 'FRZ', points: 2, color: '#fab491', id: 5,
     },
     {
-        name: 'BIO', points: 15, color: '#69cf55', id: 6,
+        name: 'BIO', points: 15, color: '#34d942', id: 6,
     },
     {
-        name: 'SPA', points: 13, color: '#f07f16', id: 7,
+        name: 'SPA', points: 13, color: '#fab491', id: 7,
+    },
+    {
+        name: 'GEO', points: 13, color: '#27b34a', id: 7,
     },
 ];
 
