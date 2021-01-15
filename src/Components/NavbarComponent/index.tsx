@@ -10,13 +10,13 @@ interface Props {
 export class Navbar extends Component<Props> {
     render() {
         return (
-            <div className="navbar" >
+            <header className="navbar" >
                 <Link to="/" className={"navbarButton"}>✉ HOME</Link>
                 <Link to="/overview" className={"navbarButton"}> OVERVIEW </Link>
                 <div > CALQ </div>
                 <Link to="/" className={"navbarButton"} >✚ ADD</Link>
                 <Link to="/" className={"navbarButton"} >LOGIN</Link>
-            </div>
+            </header>
         )
     }
 }

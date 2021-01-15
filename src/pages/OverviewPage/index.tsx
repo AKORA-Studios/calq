@@ -6,10 +6,9 @@ import { getSubjects, Subject } from "../../database";
 //var data = parse(require('./test.json'));
 
 export class OverviewPage extends Component<{}, { data: Subject[] }> {
-    constructor(props: {}) {
-        super(props);
-        this.state = { data: [] }
+    state: { data: Subject[] } = { data: [] }
 
+    componentDidMount() {
         getSubjects().then((json) => {
             this.setState({
                 data: json
@@ -21,9 +20,9 @@ export class OverviewPage extends Component<{}, { data: Subject[] }> {
         return (
             <div>
                 <Navbar type={'overview'} />
-                <div className="headline">
+                <div className="conatiner">
                     {(this.state.data.map(sub =>
-                        <SubjectView
+                        <SubjectView key={sub.id}
                             name={sub.name} color={sub.color} tests={sub.tests} id={sub.id} />
                     ))}
 

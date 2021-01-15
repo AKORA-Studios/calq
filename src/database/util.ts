@@ -30,7 +30,6 @@ export interface Subject {
 export function parse(data: any[]) {
     for (const sub of data) {
         for (const test of sub.tests) {
-            console.log(test.date);
             //@ts-ignore
             test.date = new Date(test.date);
         }
@@ -39,9 +38,9 @@ export function parse(data: any[]) {
         sub.tests = (sub.tests as unknown as Test[]).sort((a, b) => a.date.getTime() - b.date.getTime())
     }
 
-    console.log(JSON.stringify(data));
 
-    return data as unknown as Subject[];
+
+    return data as Subject[];
 }
 
 

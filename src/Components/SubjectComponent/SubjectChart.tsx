@@ -33,7 +33,7 @@ export class SubjectChart extends Component<Subject, States> {
         return (
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={this.props.tests}>
-
+                    {console.log(this.props.id)}
                     <defs>
                         <linearGradient id={`gradientFor${this.props.id}`} x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor={this.props.color} stopOpacity={1} />
