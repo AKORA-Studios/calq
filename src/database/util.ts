@@ -1,39 +1,28 @@
-export interface RawTest {
-    name: string;
-    topic: string;
-    date: string;
-    type: 'Big' | 'Smal';
-    points: number;
-}
 export interface Test {
+    /** The name of the Test */
     name: string;
-    topic: string;
+    /** Tegs like `trigonometry, geometry, probability, orally`. */
+    tags: string[];
+    /** The date the Test was written at. */
     date: Date;
-    /** Shows how much this test effects your grade 
-     * @example Doubled rating
-     * test.rating = 2
+    /** Shows how much this test effects your grade. 
+     * Klassenarbeit = BIG BOIIIIIII
     */
     type: 'Big' | 'Smal';
-    /** A number ranging from `0` to `15` that stands for the number of points you got in the Test*/
+    /** A number ranging from `0` to `15` that stands for the number of points you got in the Test. */
     points: number;
-    /**
-     */
 }
 
-export interface RawSubject {
-    name: string;
-    color: string;
-    id: string;
-    entr: RawTest[];
-}
+
 export interface Subject {
+    /** Name of the Subject */
     name: string;
+    /** The color the Subject is marked as in **HEX** format, this value affects the graph and visual appearance. */
     color: string;
-    id: string;
-    /**
-     * A List of all tests written in this Subject
-     */
-    entr: Test[];
+    /** This value is internally set and doesnt affect anything except internal functionallity.*/
+    id?: any;
+    /** A List of all tests written in this Subject */
+    tests: Test[];
 }
 
 export function parse(data: RawSubject[]) {
