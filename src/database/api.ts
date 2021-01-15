@@ -1,6 +1,6 @@
 import { parse, Subject } from "./util";
 
-const url = "http://uwu.org:3001/api/";
+const url = "http://192.168.1.24:3001/api/";
 
 export function getSubjects(): Promise<Subject[]> {
     return fetch(url + "subject/all").then(r => r.json().then(o => parse(o)))
