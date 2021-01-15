@@ -1,26 +1,29 @@
 [{
         "name": "Subject A",
-        "id": "Qwq",
-        "entr": [{
+        "tests": [{
                 "name": "Test UTF8",
+                "tags": [],
                 "date": "2020/07/05",
                 "points": 12,
                 "type": "Big"
             },
             {
                 "name": "Test VSC",
+                "tags": [],
                 "date": "2020/05/05",
                 "points": 9,
                 "type": "Smal"
             },
             {
                 "name": "Test VSC II",
+                "tags": [],
                 "date": "2020/09/05",
                 "points": 3,
                 "type": "Smal"
             },
             {
                 "name": "Test Lorem Ipsum",
+                "tags": [],
                 "date": "2020/10/05",
                 "points": 14,
                 "type": "Smal"
@@ -30,21 +33,23 @@
     },
     {
         "name": "Subject B",
-        "id": "qwq",
-        "entr": [{
+        "tests": [{
                 "name": "Test UTF8",
+                "tags": [],
                 "date": "2020/03/05",
                 "points": 12,
                 "type": "Big"
             },
             {
                 "name": "Test VSC",
+                "tags": [],
                 "date": "2020/02/05",
                 "points": 3,
                 "type": "Smal"
             },
             {
                 "name": "Test Lorem Ipsum",
+                "tags": [],
                 "date": "2020/05/05",
                 "points": 4,
                 "type": "Smal"
@@ -54,15 +59,16 @@
     },
     {
         "name": "Subject C",
-        "id": "3",
-        "entr": [{
+        "tests": [{
                 "name": "Test UTF8",
+                "tags": [],
                 "date": "2020/03/05",
                 "points": 4,
                 "type": "Big"
             },
             {
                 "name": "Test Lorem Ipsum",
+                "tags": [],
                 "date": "2020/05/05",
                 "points": 9,
                 "type": "Smal"
