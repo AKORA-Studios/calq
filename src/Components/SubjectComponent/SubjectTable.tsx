@@ -11,7 +11,7 @@ export class SubjectTable extends Component<Subject, States> {
         return <div>{(this.props.tests.map(d =>
             <div className="testDiv">
                 <p className="AssignmentTypeIcon">{d.type === 'Big' ? '📕' : '📔'}</p>
-                <p className="subjectDescription testText mono" style={{ color: this.props.color }}>
+                <p className="subjectDescription testText" style={{ color: this.props.color }}>
                     {(d.name).length > 20 ? (d.name).substr(0, 17) + '...' : d.name}
                 </p>
 
