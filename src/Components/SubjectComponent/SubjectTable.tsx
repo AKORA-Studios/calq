@@ -8,7 +8,7 @@ interface States {
 
 export class SubjectTable extends Component<Subject, States> {
     render() {
-        return <div>{(this.props.entr.map(d =>
+        return <div>{(this.props.tests.map(d =>
             <div className="testDiv">
                 <p className="AssignmentTypeIcon">{d.type === 'Big' ? '📕' : '📔'}</p>
                 <p className="subjectDescription testText mono" style={{ color: this.props.color }}>

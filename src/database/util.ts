@@ -1,3 +1,5 @@
+import { addSubject } from "./api";
+
 export interface Test {
     /** The name of the Test */
     name: string;
@@ -25,23 +27,22 @@ export interface Subject {
     tests: Test[];
 }
 
-export function parse(data: RawSubject[]) {
+export function parse(data: any[]) {
     for (const sub of data) {
-        for (const entr of sub.entr) {
-            console.log(entr.date);
+        for (const test of sub.tests) {
+            console.log(test.date);
             //@ts-ignore
-            entr.date = new Date(entr.date);
+            test.date = new Date(test.date);
         }
 
         //@ts-ignore
-        sub.entr = (sub.entr as unknown as Test[]).sort((a, b) => a.date.getTime() - b.date.getTime())
+        sub.tests = (sub.tests as unknown as Test[]).sort((a, b) => a.date.getTime() - b.date.getTime())
     }
 
     console.log(JSON.stringify(data));
 
     return data as unknown as Subject[];
 }
-
 
 
 

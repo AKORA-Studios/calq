@@ -32,7 +32,7 @@ export class SubjectChart extends Component<Subject, States> {
     render() {
         return (
             <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={this.props.entr}>
+                <AreaChart data={this.props.tests}>
 
                     <defs>
                         <linearGradient id={`gradientFor${this.props.id}`} x1="0" y1="0" x2="0" y2="1">
@@ -58,7 +58,7 @@ export class SubjectChart extends Component<Subject, States> {
                     />
 
                     <ReferenceLine
-                        y={avarage(this.props.entr.map(v => v.points))}
+                        y={avarage(this.props.tests.map(v => v.points))}
                         stroke={this.props.color}
                         opacity={1}
                     />
