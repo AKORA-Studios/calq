@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { Area, AreaChart, CartesianGrid, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { avarage, Subject } from "../../util";
+import { avarage, Subject } from "../../database/";
 import '../components.css';
 
 interface States {

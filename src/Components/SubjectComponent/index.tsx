@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Subject } from '../../util';
+import { Subject } from '../../database/util';
 import { SubjectChart } from './SubjectChart';
 import { SubjectTable } from './SubjectTable';
 
