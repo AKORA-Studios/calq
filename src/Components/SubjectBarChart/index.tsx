@@ -1,5 +1,5 @@
-import { Component, } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell, ResponsiveContainer } from 'recharts'
+import { Component } from "react";
+import { Bar, BarChart, Cell, Tooltip, XAxis, YAxis } from 'recharts';
 
 const data = [
     {

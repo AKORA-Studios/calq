@@ -1,5 +1,5 @@
-import { Component, } from "react";
-import { RadarChart, PolarAngleAxis, PolarRadiusAxis, PolarGrid, Radar } from 'recharts'
+import { Component } from "react";
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
 
 const data = [
     {

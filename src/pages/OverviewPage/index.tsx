@@ -1,7 +1,7 @@
 import { Component } from "react";
-import { Navbar, SubjectView } from '../../Components'
-import { parse, Subject } from "../../util";
-import '../../Components/components.css'
+import { Navbar, SubjectView } from '../../Components';
+import '../../Components/components.css';
+import { parse } from "../../util";
 
 var data = parse(require('./test.json'));
 

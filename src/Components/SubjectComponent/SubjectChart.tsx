@@ -1,10 +1,31 @@
 import { Component } from "react";
-import '../components.css'
-import { LineChart, XAxis, Tooltip, CartesianGrid, Line, YAxis, AreaChart, Area, PolarGrid, CartesianAxis, ReferenceLine, ResponsiveContainer } from 'recharts'
-import { avarage, range, Subject } from "../../util";
+import { Area, AreaChart, CartesianGrid, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { avarage, Subject } from "../../util";
+import '../components.css';
 
 interface States {
 
+}
+
+
+
+class CustomTooltip extends Component<{ active?: boolean, payload?: [{ value: number }], label?: string }> {
+
+    render() {
+        if (!this.props.active) return null;
+
+        return (
+            <div className="custom-toolttip">
+                <p className="label">
+                    {`${this.props.label}: ${this.props.payload ? this.props.payload[0].value : '0'}`}
+                </p>
+                {/* 
+                <p className="intro">{this.props.label}</p>
+                <p className="desc">Anything you want can be displayed here.</p>
+                */}
+            </div>
+        );
+    };
 }
 
 export class SubjectChart extends Component<Subject, States> {
@@ -41,10 +62,10 @@ export class SubjectChart extends Component<Subject, States> {
                         stroke={this.props.color}
                         opacity={1}
                     />
-                    <XAxis dataKey="points" tick={false} stroke="#ffffff" />
-                    <YAxis domain={[0, 15]} minTickGap={0} tickCount={15} stroke="#ffffff" />
+                    <XAxis dataKey="name" tick={false} stroke="#ffffff" />
+                    <YAxis dataKey="points" domain={[0, 15]} minTickGap={0} tickCount={15} stroke="#ffffff" />
 
-                    <Tooltip label="qwq" />
+                    <Tooltip content={<CustomTooltip />} />
                 </AreaChart>
             </ResponsiveContainer>
         )
