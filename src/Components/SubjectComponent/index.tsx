@@ -10,6 +10,7 @@ export class SubjectView extends Component<Subject> {
     render() {
         return <div className="subjectView">
             <SubjectChart name={this.props.name} color={this.props.color} tests={this.props.tests} id={this.props.id} />
+            <div />
             <SubjectTable name={this.props.name} color={this.props.color} tests={this.props.tests} id={this.props.id} />
         </div>
     }

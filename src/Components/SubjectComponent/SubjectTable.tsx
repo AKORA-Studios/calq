@@ -10,21 +10,22 @@ export class SubjectTable extends Component<Subject, States> {
     render() {
         return <div>{(this.props.tests.map(d =>
             <div className="testDiv">
-                <p className="AssignmentTypeIcon">{d.type === 'Big' ? '📕' : '📔'}</p>
-                <p className="subjectDescription testText" style={{ color: this.props.color }}>
+                <p className="testType">{d.type === 'Big' ? '📕' : '📔'}</p>
+                <p className="testName testText" style={{ color: this.props.color }}>
                     {(d.name).length > 20 ? (d.name).substr(0, 17) + '...' : d.name}
                 </p>
 
-                <p className="subjectDescription testText mono" style={{ color: "white" }}>
+                <p className="testDate testText mono">
                     {d.date.toLocaleDateString('de-DE')}
                 </p>
 
-                <div className="assignmentPointsDiv" style={{ backgroundColor: this.props.color, height: '3vw' }}>
+                <div className="testPoints" style={{ backgroundColor: this.props.color, height: '3vw' }}>
                     <p className="AssigmentPoints testText mono bold" >{d.points}</p>
                 </div>
 
 
             </div>
-        ))}</div>
+        ))
+        }</div>
     }
 }

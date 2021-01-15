@@ -20,13 +20,13 @@ export class OverviewPage extends Component<{}, { data: Subject[] }> {
         return (
             <div>
                 <Navbar type={'overview'} />
-                <div className="conatiner">
+                <main className="conatiner">
                     {(this.state.data.map(sub =>
                         <SubjectView key={sub.id}
                             name={sub.name} color={sub.color} tests={sub.tests} id={sub.id} />
                     ))}
 
-                </div>
+                </main>
             </div>
 
         )

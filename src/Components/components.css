@@ -42,7 +42,8 @@ For Subjects
 
 .subjectView {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.01fr 1fr;
+    width: 98%;
     height: 100%;
     min-height: 15vw;
     margin-left: 2%;
@@ -54,6 +55,7 @@ For Subjects
 .subjectName {
     color: #ed8b13;
     font-family: Helvetica;
+    text-align: left;
 }
 
 .subjectDescription {
@@ -70,34 +72,41 @@ For Subjects
     font-weight: bold;
 }
 
-.assignmentPointsDiv {
-    color: #242424;
-    text-align: center;
-}
-
 .testDiv {
     display: grid;
     grid-template-columns: 10% 50% 30% 10%;
     color: #242424;
     background-color: #242424;
-    border-color: #000000;
-    border-style: dotted;
-    border-width: 2px;
-    border-bottom-color: transparent;
+    margin-bottom: 1%;
     margin-left: 5%;
     height: 3vw;
+    border-radius: 0.5vw;
+}
+
+.testType {
+    font-size: 2vw;
+    margin-top: 1%;
+    margin-left: 3%;
 }
 
 .testText {
     font-size: 2vw;
     overflow: hidden;
     margin: 0;
-    margin-top: 0.2vw;
+    margin-top: 0.1vw;
 }
 
-.AssignmentTypeIcon {
-    font-size: 2vw;
-    margin-top: 0;
+.testDate {
+    text-align: right;
+    color: #ffffff;
+    margin-right: 10%;
+}
+
+.testPoints {
+    color: #242424;
+    text-align: center;
+    border-top-right-radius: 0.5vw;
+    border-bottom-right-radius: 0.5vw;
 }
 
 .custom-toolttip {
