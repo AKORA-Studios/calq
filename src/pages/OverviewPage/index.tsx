@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Navbar, SubjectView } from '../../Components';
 import '../../Components/components.css';
-import { parse } from "../../database/";
+import { parse } from "../../";
 
 var data = parse(require('./test.json'));
 

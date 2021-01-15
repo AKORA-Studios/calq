@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Subject } from "../../database/";
+import { Subject } from "../../";
 import '../components.css';
 
 interface States {
