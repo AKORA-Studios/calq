@@ -12,13 +12,14 @@ const data =
 export class SubjectRadialBarChart extends Component {
     render() {
         return (
+            <Center size="50px" className="mainPageContainer">
+                <ResponsiveContainer width={500} height={500}>
 
-            <ResponsiveContainer width={500} height={500}>
-
-                <RadialBarChart width={500} height={300} cx={150} cy={150} innerRadius={20} outerRadius={140} barSize={10} data={[data]}>
-                    <RadialBar label={{ position: 'insideStart', fill: '#fff' }} dataKey="points" />
-                </RadialBarChart>
-            </ResponsiveContainer>
+                    <RadialBarChart innerRadius={60} outerRadius={140} barSize={10} data={[data]} >
+                        <RadialBar fill={data.color} maxBarSize={15} label={{ position: 'insideStart', fill: data.color }} dataKey="points" />
+                    </RadialBarChart>
+                </ResponsiveContainer>
+            </Center>
 
         );
     }

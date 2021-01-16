@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Page, RadialChartAll, SubejctBarChartAll } from '../../Components';
+import { Page, RadialChartAll, SubejctBarChartAll, SubjectRadialBarChart } from '../../Components';
 
 export class MainPage extends Component {
     render() {
@@ -7,6 +7,7 @@ export class MainPage extends Component {
             <Page name="home" style={{ display: 'grid', gridTemplateColumns: "50% 50%" }}>
                 <SubejctBarChartAll />
                 <RadialChartAll />
+                <SubjectRadialBarChart />
             </Page>
         )
     }
