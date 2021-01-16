@@ -1,5 +1,3 @@
-import { Component } from "react";
-import { addSubject } from "./api";
 
 export interface Test {
     /** The name of the Test */

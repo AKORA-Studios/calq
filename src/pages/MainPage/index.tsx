@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Navbar, SubejctBarChartAll, RadialChartAll, Page } from '../../Components'
+import { Page, RadialChartAll, SubejctBarChartAll } from '../../Components';
 
 export class MainPage extends Component {
     render() {

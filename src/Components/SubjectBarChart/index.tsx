@@ -51,16 +51,14 @@ export class SubejctBarChartAll extends Component {
             <div className="mainPageContainer">
                 <ResponsiveContainer>
                     <BarChart data={data}>
-
                         <Bar dataKey="points" barSize={40} radius={4} > {data.map((entry, index) => (
                             <Cell fill={entry.color} />
                         ))} </Bar>
                         <Tooltip />
+
                         <XAxis dataKey="name" minTickGap={1} tickCount={2} tick={{ fill: '#ffffff' }} />
-                        < YAxis domain={[0, 15]} minTickGap={0} tickCount={15} />
-
+                        <YAxis domain={[0, 15]} minTickGap={0} tickCount={15} />
                     </BarChart>
-
                 </ResponsiveContainer>
             </div>
         )

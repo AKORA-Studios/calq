@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { LoadingIndicator, Navbar, Page, SubjectView } from '../../Components';
+import { Page, SubjectView } from '../../Components';
 import '../../Components/components.css';
 import { getSubjects, Subject } from "../../database";
 
@@ -22,9 +22,8 @@ export class OverviewPage extends Component<{}, States> {
     }
 
     render() {
-        if (this.state.loading) return <Page isLoading />
         return (
-            <Page>
+            <Page isLoading={this.state.loading}>
                 {(this.state.data.map(sub =>
                     <SubjectView key={sub.id}
                         name={sub.name} color={sub.color} tests={sub.tests} id={sub.id} />

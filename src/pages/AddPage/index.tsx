@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Navbar, Page } from '../../Components'
+import { Page } from '../../Components';
 
 export class AddPage extends Component {
     render() {
