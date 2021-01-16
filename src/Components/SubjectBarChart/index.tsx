@@ -45,7 +45,7 @@ const data = [
 
 
 
-export class SubejctBarChartAll extends Component {
+export class SubjectBarChartAll extends Component {
     render() {
         return (
             <div className="mainPageContainer">
