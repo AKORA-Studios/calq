@@ -60,3 +60,26 @@ export function max(arr: number[]) {
     for (const v of arr) if (v > max) max = v;
     return max;
 }
+
+
+
+export function realAverageSubjectPoints(arr: Test[]) {
+    var numberBug = 0,
+        numberSmal = 0
+
+    const arraySmal = arr.filter(v => v.type === 'Smal')
+    const arrayBug = arr.filter(v => v.type === 'Big')
+
+    arrayBug.forEach(e => {
+        numberBug += e.points
+    })
+    arrayBug.forEach(e => {
+        numberSmal += e.points
+    })
+
+    var averageSmal = numberSmal / arraySmal.length
+    var avcerageBug = numberBug / arrayBug.length
+
+
+    return (averageSmal + avcerageBug) / 2
+}
