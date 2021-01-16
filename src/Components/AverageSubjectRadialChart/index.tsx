@@ -15,7 +15,7 @@ export class SubjectRadialBarChart extends Component {
             <Center size="50px" className="mainPageContainer">
                 <ResponsiveContainer width={500} height={500}>
 
-                    <RadialBarChart innerRadius={60} outerRadius={140} barSize={10} data={[data]} >
+                    <RadialBarChart innerRadius={120} outerRadius={200} maxBarSize={15} data={[data]} >
                         <RadialBar fill={data.color} maxBarSize={15} background label={{ position: 'insideStart', fill: data.color }} dataKey="points" />
                     </RadialBarChart>
                 </ResponsiveContainer>
