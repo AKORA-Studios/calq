@@ -35,8 +35,7 @@ export interface UserData {
     data: Subject[]
 }
 
-export function parse(data_: any[]) {
-    var data = data_ as Subject[];
+export function parse(data: Subject[]) {
     for (const sub of data) {
         for (const test of sub.tests) {
             //@ts-ignore

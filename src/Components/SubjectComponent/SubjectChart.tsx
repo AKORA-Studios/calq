@@ -71,7 +71,7 @@ export class SubjectChart extends Component<Props, States> {
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={this.props.tests}>
                     <defs>
-                        <linearGradient id={`gradientFor${this.props.id}`} x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id={`gradientFor${this.props.name}`} x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor={this.props.color} stopOpacity={1} />
                             <stop offset={this.state.graphAvg + "%"} stopColor={this.props.color} stopOpacity={0.6} />
                             <stop offset="95%" stopColor={this.props.color} stopOpacity={0.05} />
@@ -94,7 +94,7 @@ export class SubjectChart extends Component<Props, States> {
                     <Area type="monotone" dataKey="points"
                         stroke={this.props.color}
                         fillOpacity={1}
-                        fill={`url(#gradientFor${this.props.id})`}
+                        fill={`url(#gradientFor${this.props.name})`}
                         animationEasing="ease-in-out"
                         name="Points"
                         dot={{ stroke: "#ffffff", opacity: 0.2 }}

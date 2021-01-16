@@ -1,9 +1,12 @@
 import { parse, Subject, UserData } from "./util";
 
-const url = "http://192.168.1.24:3001/api/user/600359c10d42124580e6e6fc/";
+const url = "http://localhost:3001/api/user/600359c10d42124580e6e6fc/";
 
 export function getSubjects(): Promise<Subject[]> {
-    return fetch(url + "data").then(r => r.json().then((o: UserData) => parse(o.data)));
+    return fetch(url + "data").then(r => r.json().then((o: UserData) => {
+        console.log(o);
+        return parse(o.data)
+    }));
 }
 
 /** Returns the Status Code */

@@ -9,9 +9,9 @@ export * from './SubjectTable';
 export class SubjectView extends Component<Subject> {
     render() {
         return <div className="subjectView">
-            <SubjectChart name={this.props.name} color={this.props.color} tests={this.props.tests} id={this.props.id} />
+            <SubjectChart name={this.props.name} color={this.props.color} tests={this.props.tests} />
             <div />
-            <SubjectTable name={this.props.name} color={this.props.color} tests={this.props.tests} id={this.props.id} />
+            <SubjectTable name={this.props.name} color={this.props.color} tests={this.props.tests} />
         </div>
     }
 }

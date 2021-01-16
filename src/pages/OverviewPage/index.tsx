@@ -26,8 +26,8 @@ export class OverviewPage extends Component<{}, States> {
         return (
             <Page isLoading={this.state.loading} name="overview">
                 {(this.state.data.map(sub =>
-                    <SubjectView key={sub.id}
-                        name={sub.name} color={sub.color} tests={sub.tests} id={sub.id} />
+                    <SubjectView key={sub.name}
+                        name={sub.name} color={sub.color} tests={sub.tests} />
                 ))}
 
             </Page>
