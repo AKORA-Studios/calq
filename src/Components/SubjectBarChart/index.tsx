@@ -1,5 +1,6 @@
 import { Component } from "react";
-import { Bar, BarChart, Cell, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, BarChart, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import '../components.css'
 
 const data = [
     {
@@ -47,20 +48,20 @@ const data = [
 export class SubejctBarChartAll extends Component {
     render() {
         return (
-            <div style={{ marginLeft: "5%", marginRight: "5%", marginTop: "5%" }}>
+            <div className="mainPageContainer">
+                <ResponsiveContainer>
+                    <BarChart data={data}>
 
-                <BarChart width={600} height={400} data={data}>
+                        <Bar dataKey="points" barSize={40} radius={4} > {data.map((entry, index) => (
+                            <Cell fill={entry.color} />
+                        ))} </Bar>
+                        <Tooltip />
+                        <XAxis dataKey="name" minTickGap={1} tickCount={2} tick={{ fill: '#ffffff' }} />
+                        < YAxis domain={[0, 15]} minTickGap={0} tickCount={15} />
 
-                    <Bar dataKey="points" barSize={40} radius={4} > {data.map((entry, index) => (
-                        <Cell fill={entry.color} />
-                    ))} </Bar>
-                    <Tooltip />
-                    <XAxis dataKey="name" minTickGap={1} tickCount={2} tick={{ fill: '#ffffff' }} />
-                    < YAxis domain={[0, 15]} minTickGap={0} tickCount={15} />
+                    </BarChart>
 
-                </BarChart>
-
-                <br />
+                </ResponsiveContainer>
             </div>
         )
     }

@@ -127,3 +127,16 @@ For Subjects
     padding-left: 0.3vw;
     padding-right: 0.3vw;
 }
+
+
+/**
+Main Page
+*/
+
+.mainPageContainer {
+    background-color: #242424;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 5% 5% 4% 0%;
+    border-radius: 4rem;
+}

@@ -1,5 +1,7 @@
+import { Center } from "@chakra-ui/react";
 import { Component } from "react";
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart, ResponsiveContainer } from 'recharts';
+import '../components.css'
 
 const data = [
     {
@@ -29,14 +31,16 @@ const data = [
 export class RadialChartAll extends Component {
     render() {
         return (
-            <div style={{ marginRight: '5%', marginLeft: "5%" }}>
-                <RadarChart cx={300} cy={250} outerRadius={150} width={500} height={500} data={data}>
-                    <PolarGrid />
-                    <PolarAngleAxis dataKey="name" tick={{ fill: '#ffffff' }} />
-                    {/*<PolarRadiusAxis domain={[0, 15]} />*/}
-                    <Radar name="name" dataKey="points" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-                </RadarChart>
-            </div>
+            <Center size="50px" className="mainPageContainer">
+                <ResponsiveContainer width={500} height={500}>
+                    <RadarChart outerRadius={150} data={data}>
+                        <PolarGrid />
+                        <PolarAngleAxis dataKey="name" tick={{ fill: '#ffffff' }} />
+                        {/*<PolarRadiusAxis domain={[0, 15]} />*/}
+                        <Radar name="name" dataKey="points" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                    </RadarChart>
+                </ResponsiveContainer>
+            </Center>
         );
     }
 }
