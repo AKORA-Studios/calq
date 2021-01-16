@@ -16,6 +16,7 @@ export class OverviewPage extends Component<{}, States> {
         console.log(this.state)
         getSubjects().then((json) => {
             this.setState({
+                loading: false,
                 data: json
             })
         })
@@ -23,7 +24,7 @@ export class OverviewPage extends Component<{}, States> {
 
     render() {
         return (
-            <Page isLoading={this.state.loading}>
+            <Page isLoading={this.state.loading} name="overview">
                 {(this.state.data.map(sub =>
                     <SubjectView key={sub.id}
                         name={sub.name} color={sub.color} tests={sub.tests} id={sub.id} />

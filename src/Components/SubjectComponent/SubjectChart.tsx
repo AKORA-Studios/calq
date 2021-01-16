@@ -84,6 +84,12 @@ export class SubjectChart extends Component<Props, States> {
                         vertical={false}
                     />
 
+                    <ReferenceLine
+                        y={this.state.avg}
+                        stroke="#ffffff"
+                        opacity={0.6}
+                    />
+
 
                     <Area type="monotone" dataKey="points"
                         stroke={this.props.color}
@@ -94,11 +100,7 @@ export class SubjectChart extends Component<Props, States> {
                         dot={{ stroke: "#ffffff", opacity: 0.2 }}
                     />
 
-                    <ReferenceLine
-                        y={this.state.avg}
-                        stroke={this.props.color}
-                        opacity={0.1}
-                    />
+
                     <XAxis dataKey="name" tick={false} stroke="#ffffff" />
                     <YAxis dataKey="points" domain={[0, 15]} minTickGap={0} tickCount={15} stroke="#ffffff" />
 

@@ -1,16 +1,28 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, RouteComponentProps } from "react-router-dom";
 
+interface Props {
+    name?: string
+}
 
-export class Navbar extends Component {
+interface State {
+
+}
+
+export class Navbar extends Component<Props, State> {
+    current(name: string) {
+        if (this.props.name === name) return "selected";
+        return "";
+    }
+
     render() {
         return (
             <header className="navbar" >
-                <Link to="/" className={"navbarButton"} >HOME</Link>
-                <Link to="/overview" className={"navbarButton"} >ÜBERSICHT</Link>
-                <div > CALQ </div>
-                <Link to="/add" className={"navbarButton"} >✚ ADD</Link>
-                <Link to="/login" className={"navbarButton"} >LOGIN</Link>
+                <Link to="/" className={this.current("home")}>HOME</Link>
+                <Link to="/overview" className={this.current("overview")}>ÜBERSICHT</Link>
+                <p> CALQ </p>
+                <Link to="/add" className={this.current("add")}>✚ ADD</Link>
+                <Link to="/login" className={this.current("login")}>LOGIN</Link>
             </header>
         )
     }

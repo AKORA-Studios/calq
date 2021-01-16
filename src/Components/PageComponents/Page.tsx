@@ -5,6 +5,7 @@ import '../components.css';
 
 interface Props {
     style?: CSSProperties;
+    name?: string;
     isLoading?: boolean;
 }
 
@@ -13,7 +14,7 @@ export class Page extends Component<Props> {
     render() {
         return (
             <div>
-                <Navbar />
+                <Navbar name={this.props.name} />
                 {this.props.isLoading ? <div className="progressAnimation"><LoadingIndicator /></div> : (
                     <main style={this.props.style}>
                         {this.props.children}
