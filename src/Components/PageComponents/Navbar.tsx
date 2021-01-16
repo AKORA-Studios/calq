@@ -1,12 +1,8 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
-import '../components.css';
-interface Props {
-    type: string
-}
 
 
-export class Navbar extends Component<Props> {
+export class Navbar extends Component {
     render() {
         return (
             <header className="navbar" >

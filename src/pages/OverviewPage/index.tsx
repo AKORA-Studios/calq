@@ -1,14 +1,19 @@
 import { Component } from "react";
-import { Navbar, SubjectView } from '../../Components';
+import { LoadingIndicator, Navbar, Page, SubjectView } from '../../Components';
 import '../../Components/components.css';
 import { getSubjects, Subject } from "../../database";
 
 //var data = parse(require('./test.json'));
 
-export class OverviewPage extends Component<{}, { data: Subject[] }> {
-    state: { data: Subject[] } = { data: [] }
+interface States {
+    loading: boolean,
+    data: Subject[]
+}
+export class OverviewPage extends Component<{}, States> {
+    state: States = { data: [], loading: true }
 
     componentDidMount() {
+        console.log(this.state)
         getSubjects().then((json) => {
             this.setState({
                 data: json
@@ -17,18 +22,15 @@ export class OverviewPage extends Component<{}, { data: Subject[] }> {
     }
 
     render() {
+        if (this.state.loading) return <Page isLoading />
         return (
-            <div>
-                <Navbar type={'overview'} />
-                <main className="conatiner">
-                    {(this.state.data.map(sub =>
-                        <SubjectView key={sub.id}
-                            name={sub.name} color={sub.color} tests={sub.tests} id={sub.id} />
-                    ))}
+            <Page>
+                {(this.state.data.map(sub =>
+                    <SubjectView key={sub.id}
+                        name={sub.name} color={sub.color} tests={sub.tests} id={sub.id} />
+                ))}
 
-                </main>
-            </div>
-
+            </Page>
         )
     }
 }

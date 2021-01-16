@@ -1,5 +1,9 @@
+body {
+    background-color: #303030;
+}
+
 .navbar {
-    color: #ed8b13;
+    color: #59afff;
     background-color: #242424;
     height: 4.5rem;
     width: 100%;
@@ -15,7 +19,7 @@
 }
 
 .navbar>* {
-    color: #ed8b13;
+    color: #59afff;
     margin: 0;
     padding: 0;
     width: 100%;

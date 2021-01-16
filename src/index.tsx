@@ -8,13 +8,31 @@ import reportWebVitals from './reportWebVitals';
 export * from './database';
 
 const colors = {
-  brand: {
-    900: "#1a365d",
-    800: "#153e75",
-    700: "#2a69ac",
+  styles: {
+    global: {
+      body: {
+        bg: '#303030'
+      }
+    }
   },
+  colors: {
+    brand: {
+      900: "#1D4044",
+      800: "#234E52",
+      700: "#285E61",
+      600: "#2C7A7B",
+      500: "#319795",
+      400: "#38B2AC",
+      300: "#4FD1C5",
+      200: "#81E6D9",
+      100: "#B2F5EA",
+      50: "#E6FFFA"
+    }
+  }
 }
-const theme = extendTheme({ colors })
+const theme = extendTheme(colors)
+
+
 
 ReactDOM.render(
   <React.StrictMode>

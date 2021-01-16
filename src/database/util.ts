@@ -1,3 +1,4 @@
+import { Component } from "react";
 import { addSubject } from "./api";
 
 export interface Test {

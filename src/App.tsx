@@ -5,18 +5,15 @@ import { MainPage, OverviewPage, AddPage, LoginPage } from './pages'
 
 function App() {
     return (
-        <div >
-            <Router>
-                < Switch >
-                    < Route path="/" exact={true} component={MainPage} />
-                    < Route path="/add" exact={true} component={AddPage} />
-                    < Route path="/login" exact={true} component={LoginPage} />
-                    < Route path="/overview" exact={true} component={OverviewPage} />
-                    < Route path="*" exact={true} component={MainPage} />
-                </Switch >
-            </Router>
-        </div>
-
+        <Router>
+            < Switch >
+                < Route path="/" exact={true} component={MainPage} />
+                < Route path="/add" exact={true} component={AddPage} />
+                < Route path="/login" exact={true} component={LoginPage} />
+                < Route path="/overview" exact={true} component={OverviewPage} />
+                < Route path="*" exact={true} component={MainPage} />
+            </Switch >
+        </Router>
     );
 }
 
