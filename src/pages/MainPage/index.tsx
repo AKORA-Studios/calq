@@ -8,7 +8,7 @@ export class MainPage extends Component {
             <Page name="home" style={{ display: 'grid', gridTemplateColumns: "50% 50%" }}>
                 <SubjectBarChartAll />
                 <RadialChartAll />
-                <RadialBarChart />
+                <SubjectRadialBarChart />
             </Page>
         )
     }
