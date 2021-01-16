@@ -1,6 +1,6 @@
 import { Center } from "@chakra-ui/react";
 import { Component } from "react";
-import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis } from 'recharts';
 import '../components.css'
 
 const data =
@@ -17,6 +17,11 @@ export class SubjectRadialBarChart extends Component {
 
                     <RadialBarChart innerRadius={60} outerRadius={140} barSize={10} data={[data]} >
                         <RadialBar fill={data.color} maxBarSize={15} background label={{ position: 'insideStart', fill: data.color }} dataKey="points" />
+                        <PolarAngleAxis
+                            type="number"
+                            domain={[0, 15]}
+                            tick={false}
+                        />
                     </RadialBarChart>
                 </ResponsiveContainer>
             </Center>
