@@ -2,15 +2,6 @@ export interface User {
     username: string;
     password: string;
     id?: any;
-    settings: SubjectSetting[];
-}
-export interface UserDoc extends User, Document { }
-
-export type SubjectType = 'MA' | 'ENG' | 'DE' | 'CHE' | 'FRZ' | 'BIO' | 'SPA' | 'GEO' | 'INF' | 'ETH' | 'KU' | 'MU';
-export interface SubjectSetting {
-    name: SubjectType;
-    color: string;
-    active: boolean;
 }
 
 export interface Test {
@@ -28,10 +19,11 @@ export interface Test {
     points: number;
 }
 
-
+export type SubjectType = 'MA' | 'ENG' | 'DE' | 'CHE' | 'FRZ' | 'BIO' | 'SPA' | 'GEO' | 'INF' | 'ETH' | 'KU' | 'MU';
 export interface Subject {
     /** Name of the Subject */
-    name: string;
+    name: SubjectType;
+    color: string;
     /** A List of all tests written in this Subject */
     tests: Test[];
 }
