@@ -1,7 +1,8 @@
 import { Component, CSSProperties } from "react";
-import { Navbar, Footer } from "./";
+import { Navbar, Footer, LoadingIndicator } from ".";
 import '../components.css';
-import { LoadingIndicator } from "./loading";
+
+
 interface Props {
     style?: CSSProperties;
     isLoading?: boolean;
@@ -13,7 +14,7 @@ export class Page extends Component<Props> {
         return (
             <div>
                 <Navbar />
-                {this.props.isLoading ? <LoadingIndicator /> : (
+                {this.props.isLoading ? <div className="progressAnimation"><LoadingIndicator /></div> : (
                     <main style={this.props.style}>
                         {this.props.children}
                     </main>

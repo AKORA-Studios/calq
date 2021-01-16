@@ -1,5 +1,4 @@
-export { Navbar } from './PageComponents/navbar'
 export { SubejctBarChartAll } from './SubjectBarChart'
 export { RadialChartAll } from './RadialChartAll'
 export * from './SubjectComponent'
-export * from './PageComponents/'
+export * from './PageComponents'

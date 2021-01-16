@@ -41,6 +41,15 @@ body {
 
 
 /**
+Progress animation
+*/
+
+.progressAnimation>div>div {
+    animation-duration: 2s;
+}
+
+
+/**
 For Subjects
 */
 
