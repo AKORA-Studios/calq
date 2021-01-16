@@ -1,3 +1,17 @@
+export interface User {
+    username: string;
+    password: string;
+    id?: any;
+    settings: SubjectSetting[];
+}
+export interface UserDoc extends User, Document { }
+
+export type SubjectType = 'MA' | 'ENG' | 'DE' | 'CHE' | 'FRZ' | 'BIO' | 'SPA' | 'GEO' | 'INF' | 'ETH' | 'KU' | 'MU';
+export interface SubjectSetting {
+    name: SubjectType;
+    color: string;
+    active: boolean;
+}
 
 export interface Test {
     /** The name of the Test */
@@ -18,15 +32,19 @@ export interface Test {
 export interface Subject {
     /** Name of the Subject */
     name: string;
-    /** The color the Subject is marked as in **HEX** format, this value affects the graph and visual appearance. */
-    color: string;
-    /** This value is internally set and doesnt affect anything except internal functionallity.*/
-    id?: any;
     /** A List of all tests written in this Subject */
     tests: Test[];
 }
 
-export function parse(data: any[]) {
+
+export interface UserData {
+    id?: any;
+    userID: string;
+    data: Subject[]
+}
+
+export function parse(data_: any[]) {
+    var data = data_ as Subject[];
     for (const sub of data) {
         for (const test of sub.tests) {
             //@ts-ignore
@@ -34,7 +52,7 @@ export function parse(data: any[]) {
         }
 
         //@ts-ignore
-        sub.tests = (sub.tests as unknown as Test[]).sort((a, b) => a.date.getTime() - b.date.getTime())
+        sub.tests = (sub.tests as Test[]).sort((a, b) => a.date.getTime() - b.date.getTime())
     }
 
 
