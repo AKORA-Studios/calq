@@ -51,7 +51,7 @@ export class SubjectBarChartAll extends Component {
             <div className="mainPageContainer">
                 <ResponsiveContainer>
                     <BarChart data={data}>
-                        <Bar dataKey="points" barSize={40} radius={4} > {data.map((entry, index) => (
+                        <Bar dataKey="points" barSize={20} radius={4} > {data.map((entry, index) => (
                             <Cell fill={entry.color} />
                         ))} </Bar>
                         <Tooltip />

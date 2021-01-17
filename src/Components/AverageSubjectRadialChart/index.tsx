@@ -3,20 +3,22 @@ import { Component } from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer, PolarAngleAxis } from 'recharts';
 import '../components.css'
 
-const data =
-{
-    name: 'MA', points: 12, color: '#f52525', id: 1,
+
+interface Props {
+    name: string, points: number, color: string
 }
 
-
-export class SubjectRadialBarChart extends Component {
+interface State {
+    size: number
+}
+export class SubjectRadialBarChart extends Component<Props, State> {
+    state: { size: number } = { size: 150 };
     render() {
         return (
-            <Center size="50px" className="mainPageContainer">
-                <ResponsiveContainer width={500} height={500}>
-
-                    <RadialBarChart innerRadius={120} outerRadius={200} maxBarSize={15} data={[data]} >
-                        <RadialBar fill={data.color} maxBarSize={15} background label={{ position: 'insideStart', fill: data.color }} dataKey="points" />
+            <Center size="100px" >
+                <ResponsiveContainer width={this.state.size} height={this.state.size}>
+                    <RadialBarChart innerRadius={this.state.size / 2 * 0.8} outerRadius={this.state.size / 2 * 0.7} maxBarSize={15} data={[this.props]} >
+                        <RadialBar fill={this.props.color} maxBarSize={15} dataKey="points" />
                         <PolarAngleAxis
                             type="number"
                             domain={[0, 15]}
@@ -24,8 +26,9 @@ export class SubjectRadialBarChart extends Component {
                         />
                     </RadialBarChart>
                 </ResponsiveContainer>
+                <text style={{ color: this.props.color, fontSize: '2vw', position: 'absolute', paddingTop: '12%' }}>{this.props.name} </text>
+                <text style={{ color: this.props.color, fontSize: '2vw', position: 'absolute' }}>{this.props.points} </text>
             </Center>
-
         );
     }
 }
