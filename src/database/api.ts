@@ -1,6 +1,6 @@
 import { parse, Subject, UserData } from "./util";
-
-const url = "http://localhost:3001/api/user/600359c10d42124580e6e6fc/";
+import * as config from './config.json';
+const url = config.API_URL + "user/600435581ae4c71eba986277/";
 
 export function getSubjects(): Promise<Subject[]> {
     return fetch(url + "data").then(r => r.json().then((o: UserData) => {
