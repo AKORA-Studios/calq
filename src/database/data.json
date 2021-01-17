@@ -1,0 +1,16 @@
+{
+    "subjects": {
+        "MA": "Mathe",
+        "ENG": "Englisch",
+        "DE": "Deutsch",
+        "CHE": "Chemie",
+        "FRZ": "Französisch",
+        "BIO": "Biologie",
+        "SPA": "Spanisch",
+        "GEO": "Geographie",
+        "INF": "Informatik",
+        "ETH": "Ethik",
+        "KU": "Kunst",
+        "MU": "Musik"
+    }
+}

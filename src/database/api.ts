@@ -1,5 +1,9 @@
 import { parse, Subject, UserData } from "./util";
-import * as config from './config.json';
+import config from './config.json';
+import values from './data.json';
+export const conf = config;
+export const val = values;
+
 const url = config.API_URL + "user/600435581ae4c71eba986277/";
 
 export function getSubjects(): Promise<Subject[]> {

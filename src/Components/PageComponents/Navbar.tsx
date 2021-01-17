@@ -21,7 +21,7 @@ export class Navbar extends Component<Props, State> {
                 <Link to="/" className={this.current("home")}>HOME</Link>
                 <Link to="/overview" className={this.current("overview")}>ÜBERSICHT</Link>
                 <p> CALQ </p>
-                <Link to="/add" className={this.current("add")}>✚ ADD</Link>
+                <Link to="/register" className={this.current("add")}>✚ REGISTER</Link>
                 <Link to="/login" className={this.current("login")}>LOGIN</Link>
             </header>
         )
