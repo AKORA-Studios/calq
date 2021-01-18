@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import { user } from "../../database";
 
 interface Props {
     name?: string
@@ -22,7 +23,7 @@ export class Navbar extends Component<Props, State> {
                 <Link to="/overview" className={this.current("overview")}>ÜBERSICHT</Link>
                 <p> CALQ </p>
                 <Link to="/add" className={this.current("add")}>✚ ADD</Link>
-                <Link to="/login" className={this.current("login")}>LOGIN</Link>
+                <Link to="/login" className={this.current("login")}>{user ? user.username : 'LOGIN'}</Link>
             </header>
         )
     }

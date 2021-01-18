@@ -1,19 +1,32 @@
-import { parse, Subject, UserData } from "./util";
+import { parse, Subject, User, UserData } from "./util";
 import config from './config.json';
 import values from './data.json';
+import axios, { AxiosRequestConfig } from "axios";
 export const conf = config;
+const { API_URL } = config;
 export const val = values;
+export var user: User | undefined = undefined;
 
-const url = config.API_URL + "user/600435581ae4c71eba986277/";
+const opt: AxiosRequestConfig = {
+    withCredentials: true
+}
+
+export function login(data: User) {
+    return axios.post(API_URL + "/login", data, opt).then(() =>
+        axios.get(API_URL + "/user", opt).then(r => r.data).then((data) => {
+            user = data as unknown as User
+        }));
+}
 
 export function getSubjects(): Promise<Subject[]> {
-    return fetch(url + "data").then(r => r.json().then((o: UserData) => {
+    return axios.get(`${API_URL}/data`, opt).then(e => e.data).then((o: UserData) => {
         console.log(o);
         return parse(o.data)
-    }));
+    });
 }
 
 /** Returns the Status Code */
+/*
 export function addSubject(data: Subject): Promise<number> {
     return fetch(url + "subject", {
         headers: {
@@ -24,3 +37,4 @@ export function addSubject(data: Subject): Promise<number> {
         method: 'POST'
     }).then(r => r.status);
 }
+*/

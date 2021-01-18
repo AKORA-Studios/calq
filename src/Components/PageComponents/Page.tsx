@@ -1,4 +1,5 @@
-import { Component, CSSProperties } from "react";
+import { Button, Center, useToast } from "@chakra-ui/react";
+import { Component, CSSProperties, FC } from "react";
 import { Navbar, Footer, LoadingIndicator } from ".";
 import '../components.css';
 
@@ -7,22 +8,34 @@ interface Props {
     style?: CSSProperties;
     name?: string;
     isLoading?: boolean;
+    error?: boolean;
 }
 
 
-export class Page extends Component<Props> {
-    render() {
-        return (
-            <div>
-                <Navbar name={this.props.name} />
-                {this.props.isLoading ? <div className="progressAnimation"><LoadingIndicator /></div> : (
-                    <main style={this.props.style}>
-                        {this.props.children}
-                    </main>
-                )}
+export const Page: FC<Props> = (props) => {
+    const toast = useToast({
+        position: 'top',
+        duration: 5000,
+        isClosable: true
+    })
 
-                <Footer />
-            </div >
-        )
-    }
+    console.log(props);
+
+    return (
+        <div>
+            <Navbar name={props.name} />
+            {(() => {
+                if (props.isLoading) return <div className="progressAnimation"><LoadingIndicator /></div>;
+                if (props.error) return <main><Center width="100%">
+                    <Button as='a' href='/login'>Du musst angemeldet sein</Button>
+                </Center></main>;
+
+                return <main style={props.style}>
+                    {props.children}
+                </main>
+            })()}
+            <Footer />
+        </div >
+    )
+
 }

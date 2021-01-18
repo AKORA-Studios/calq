@@ -7,10 +7,11 @@ import { getSubjects, Subject } from "../../database";
 
 interface States {
     loading: boolean,
+    error: boolean,
     data: Subject[]
 }
 export class OverviewPage extends Component<{}, States> {
-    state: States = { data: [], loading: true }
+    state: States = { data: [], loading: true, error: false }
 
     componentDidMount() {
         console.log(this.state)
@@ -18,13 +19,18 @@ export class OverviewPage extends Component<{}, States> {
             this.setState({
                 loading: false,
                 data: json
-            })
+            });
+        }).catch((err) => {
+            this.setState({
+                loading: false,
+                error: true
+            });
         })
     }
 
     render() {
         return (
-            <Page isLoading={this.state.loading} name="overview">
+            <Page isLoading={this.state.loading} error={this.state.error} name="overview">
                 {(this.state.data.map(sub =>
                     <SubjectView key={sub.name}
                         name={sub.name} color={sub.color} tests={sub.tests} />
