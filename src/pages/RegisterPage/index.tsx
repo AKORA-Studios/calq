@@ -1,86 +1,83 @@
-import { Box, Button, ButtonGroup, Center, FormControl, FormErrorMessage, FormLabel, Input, Radio } from "@chakra-ui/react";
-import { Field, Form, Formik } from "formik";
-import { CheckboxContainer, CheckboxControl, CheckboxSingleControl, InputControl, NumberInputControl, PercentComplete, RadioGroupControl, ResetButton, SelectControl, SubmitButton, SwitchControl, TextareaControl } from "formik-chakra-ui";
+import { Box, Center, useToast } from "@chakra-ui/react";
+import { Formik } from "formik";
+import { CheckboxContainer, CheckboxControl, InputControl, SubmitButton } from "formik-chakra-ui";
 import { Component } from "react";
+import * as Yup from 'yup';
 import { Page } from '../../Components';
 import { val } from "../../database";
 
-interface FormValues {
-    firstName: string;
-}
+const validationSchema = Yup.object({
+    username: Yup.string().required(),
+    password: Yup.string().required(),
+    subjects: Yup.array().required()
+});
 
-export class RegisterPage extends Component {
-    initialValues = {
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+export const RegisterPage: React.FC = (() => {
+    const initialValues = {
 
     };
+    const toast = useToast();
 
-    sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-    onSubmit = (values: {}) => {
-        this.sleep(300).then(() => {
-            window.alert(JSON.stringify(values, null, 2));
+    const onSubmit = async (values: {}) => {
+        toast({
+            title: "Account created.",
+            description: "We've created your account for you.",
+            position: "top",
+            status: "success",
+            duration: 900,
+            isClosable: true,
         });
     };
 
-    validateName(value: string) {
-        let error
-        if (!value) {
-            error = "Name is required"
-        } else if (value.toLowerCase() !== "naruto") {
-            error = "Jeez! You're not a fan 😱"
-        }
-        return error
-    }
+    return (
+        <Page name="login" style={{ color: '#ffffff' }}>
+            <Center>
+                <Formik
+                    initialValues={initialValues}
+                    onSubmit={onSubmit}
+                    validationSchema={validationSchema}
+                    validateOnChange={false}
+                >
+                    {({ handleSubmit, values, errors }) => (
+                        <Box
+                            borderWidth="1px"
+                            rounded="lg"
+                            shadow="1px 1px 3px rgba(0,0,0,0.3)"
+                            maxWidth={800}
+                            p={6}
+                            m="10px auto"
+                            as="form"
+                            onSubmit={handleSubmit as any}
+                            display="grid"
+                            gridTemplateColumns="1fr 1fr"
+                        >
 
-
-    render() {
-        return (
-            <Page name="add" style={{ color: '#ffffff' }}>
-                <Center>
-                    <Formik
-                        initialValues={this.initialValues}
-                        onSubmit={this.onSubmit}
-                    >
-                        {({ handleSubmit, values, errors }) => (
-                            <Box
-                                borderWidth="1px"
-                                rounded="lg"
-                                shadow="1px 1px 3px rgba(0,0,0,0.3)"
-                                maxWidth={800}
-                                p={6}
-                                m="10px auto"
-                                as="form"
-                                onSubmit={handleSubmit as any}
-                            >
+                            <div>
                                 <InputControl name="username" label="Username" />
                                 <InputControl name="password" label="Password" />
-                                <CheckboxContainer name="subjects" label="Subjects">
-                                    {Object.keys(val.subjects).map((short: string) => (
-                                        <CheckboxControl name="subjects" value={short}>
-                                            {val.subjects[short as keyof typeof val.subjects]}
-                                        </CheckboxControl>
-                                    ))}
-                                </CheckboxContainer>
-                                <SelectControl
-                                    name="notes"
-                                    selectProps={{ placeholder: "Select option" }}>
-                                    <option value="option1">Option 1</option>
-                                    <option value="option2">Option 2</option>
-                                    <option value="option3">Option 3</option>
-                                </SelectControl>
-
                                 <SubmitButton>Submit</SubmitButton>
+                            </div>
 
-                                <Box as="pre" marginY={10}>
-                                    {JSON.stringify(values, null, 2)}
-                                    <br />
-                                    {JSON.stringify(errors, null, 2)}
-                                </Box>
-                            </Box>
-                        )}
-                    </Formik>
-                </Center>
-            </ Page>
-        )
-    }
-}
+                            {/* <Box as="pre" marginY={10}>
+                                            {JSON.stringify(values, null, 2)}
+                                            <br />
+                                            {JSON.stringify(errors, null, 2)}
+                                        </Box> */}
+
+                            <CheckboxContainer name="subjects" label="Subjects" marginLeft="10%">
+                                {Object.keys(val.subjects).map((short: string) => (
+                                    <CheckboxControl name="subjects" value={short}>
+                                        {val.subjects[short as keyof typeof val.subjects]}
+                                    </CheckboxControl>
+                                ))}
+                            </CheckboxContainer>
+
+                        </Box>
+                    )}
+                </Formik>
+            </Center>
+        </ Page>
+    )
+})
