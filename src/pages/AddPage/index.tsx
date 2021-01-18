@@ -1,18 +1,43 @@
-import { Component } from "react";
-import { Page } from '../../Components';
+import { Component } from "react"
+import { Page, AddComponent } from '../../Components';
 
-export class AddPage extends Component {
+const dataArray =
+    [
+        { name: 'MA' },
+        { name: 'DE' },
+        { name: 'SPA' },
+        { name: 'BIO' },
+        { name: 'CHE' },
+        { name: 'ETH' },
+        { name: 'INF' },
+        { name: 'GEO' },
+        { name: 'FR' }
+    ]
+
+interface Props {
+
+}
+interface States {
+    points: number
+}
+
+export class AddPage extends Component<Props, States> {
+    state = {
+        points: 9
+    }
     render() {
         return (
-            <Page name="add" style={{ display: 'grid', gridTemplateColumns: "50% 50%", marginTop: '5%' }}>
-                <div style={{ backgroundColor: '#242424', marginRight: '5%', marginLeft: '5%', borderRadius: '9%', color: 'white' }}>
-                    <h1>sdfsdfsdf</h1>
-                </div>
-                <div style={{ backgroundColor: '#242424', marginRight: '5%', marginLeft: '5%', borderRadius: '9%', color: 'white' }}>
-                    <h1>gfhfghfgh</h1>
+            <Page name="add" >
+                <div style={{
+                    marginLeft: '5%', marginRight: '5%',
+                    width: '70%',
+                }}>
+                    <AddComponent />
+
+
                 </div>
 
-            </Page>
+            </Page >
         )
     }
 }

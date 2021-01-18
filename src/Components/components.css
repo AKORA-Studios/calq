@@ -54,6 +54,30 @@ Progress animation
 
 
 /**
+Add Component
+*/
+.addComponentOption {
+    background-color: #242424;
+}
+.addComponentMainDiv{
+    color: white;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+
+.addComponentGridDiv{
+    display: grid;
+   grid-template-columns: 1fr 0.3fr 3fr 0.3fr 1fr  0.3fr 1fr 0.5fr 1fr;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+/**
 For Subjects
 */
 
@@ -147,3 +171,5 @@ Main Page
 
         box-shadow: 0px 1px 4px #000000;
 }
+
+
