@@ -66,7 +66,7 @@ export const RegisterPage: React.FC = (() => {
                                             {JSON.stringify(errors, null, 2)}
                                         </Box> */}
 
-                            <CheckboxContainer name="subjects" label="Subjects" marginLeft="10%">
+                            <CheckboxContainer name="subjects" label="Subjects" >
                                 {Object.keys(val.subjects).map((short: string) => (
                                     <CheckboxControl name="subjects" value={short}>
                                         {val.subjects[short as keyof typeof val.subjects]}
