@@ -2,7 +2,6 @@ import { Box, Button, Center, Grid, } from "@chakra-ui/react";
 import { Formik } from "formik";
 import { InputControl, SubmitButton } from "formik-chakra-ui";
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import * as Yup from 'yup';
 import { Page } from '../../Components';
 

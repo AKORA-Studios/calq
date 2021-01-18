@@ -1,7 +1,6 @@
 import { Box, Center, useToast } from "@chakra-ui/react";
 import { Formik } from "formik";
 import { CheckboxContainer, CheckboxControl, InputControl, SubmitButton } from "formik-chakra-ui";
-import { Component } from "react";
 import * as Yup from 'yup';
 import { Page } from '../../Components';
 import { val } from "../../database";
@@ -12,7 +11,7 @@ const validationSchema = Yup.object({
     subjects: Yup.array().required()
 });
 
-const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+//const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const RegisterPage: React.FC = (() => {
     const initialValues = {
